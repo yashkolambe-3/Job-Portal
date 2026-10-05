@@ -1,0 +1,42 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: careerconnect-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Set MYSQL_ROOT_PASSWORD in the project .env file}
+      MYSQL_DATABASE: careerconnect_db
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./backend/database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+
+  backend:
+    image: yashkolambe3/careerconnect-backend:latest
+    container_name: careerconnect-backend
+    env_file:
+      - ./backend/.env
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: careerconnect_db
+      DB_USER: root
+      DB_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Set MYSQL_ROOT_PASSWORD in the project .env file}
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mysql
+
+  frontend:
+    image: yashkolambe3/careerconnect-frontend:latest
+    container_name: careerconnect-frontend
+    environment:
+      VITE_API_BASE_URL: /api/v1
+      BACKEND_URL: http://backend:5000
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+volumes:
+  mysql_data:

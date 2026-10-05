@@ -1,0 +1,18 @@
+# Dependencies and generated output
+**/node_modules/
+**/dist/
+**/build/
+*.zip
+
+# Local configuration and secrets
+.env*
+!.env.example
+**/.env*
+!**/.env.example
+
+# User uploads, logs and editor files
+backend/uploads/
+*.log
+.DS_Store
+.vscode/
+.idea/

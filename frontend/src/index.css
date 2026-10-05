@@ -1,0 +1,347 @@
+@import "tailwindcss";
+@import "./styles/page-components.css";
+
+@theme {
+    --color-brand-cream: #FFF8EE;
+    --color-brand-soft-cream: #FDF1DF;
+    --color-brand-red: #B42318;
+    --color-brand-dark-red: #8F1D14;
+    --color-brand-light-red: #FEE4E2;
+    --color-brand-ink: #241A17;
+    --color-brand-muted: #6B625E;
+    --color-brand-border: #E8DDD5;
+    --color-brand-border-dark: #D6CCC3;
+}
+
+/* =========================================================
+   CareerConnect AI — Global Styles
+   Premium Recruitment Platform Design System
+   ========================================================= */
+
+:root {
+    /* Brand */
+    --primary: #B42318;
+    --primary-dark: #8F1D14;
+    --primary-light: #FEE4E2;
+
+    /* Backgrounds */
+    --background: #FFF8EE;
+    --surface: #FFFFFF;
+    --surface-soft: #FDF1DF;
+
+    /* Text */
+    --text-primary: #241A17;
+    --text-secondary: #6B625E;
+    --text-muted: #8A8580;
+
+    /* Borders */
+    --border: #E8DDD5;
+    --border-dark: #D6CCC3;
+
+    /* Status */
+    --success: #166534;
+    --warning: #92400E;
+    --error: #B42318;
+
+    /* Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+    --shadow-md: 0 4px 15px rgba(15, 23, 42, 0.04);
+    --shadow-lg: 0 8px 30px rgba(15, 23, 42, 0.06);
+
+    /* Typography */
+    --font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    --font-mono:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        monospace;
+
+    font-family: var(--font-family);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    color: var(--text-primary);
+    background: var(--background);
+}
+
+/* =========================================================
+   Reset
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 320px;
+    min-height: 100vh;
+
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: 1.6;
+
+    color: var(--text-primary);
+    background: var(--background);
+}
+
+/* =========================================================
+   Root
+   ========================================================= */
+
+#root {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* =========================================================
+   Typography
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+}
+
+h2 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 650;
+}
+
+h4 {
+    font-size: 17px;
+    font-weight: 650;
+}
+
+p {
+    margin-top: 0;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition:
+        color 180ms ease,
+        opacity 180ms ease;
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+/* =========================================================
+   Buttons
+   ========================================================= */
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    border: none;
+    font-family: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid rgba(180, 35, 24, 0.24);
+    outline-offset: 2px;
+}
+
+/* =========================================================
+   Form Elements
+   ========================================================= */
+
+input,
+textarea,
+select {
+    color: var(--text-primary);
+    background: var(--surface);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--text-muted);
+}
+
+/* =========================================================
+   Images
+   ========================================================= */
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================================================
+   Selection
+   ========================================================= */
+
+::selection {
+    color: var(--primary-dark);
+    background: var(--primary-light);
+}
+
+/* =========================================================
+   Scrollbar
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+}
+
+/* =========================================================
+   Code
+   ========================================================= */
+
+code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    padding: 3px 7px;
+    border-radius: 6px;
+    background: var(--surface-soft);
+    color: var(--text-primary);
+}
+
+/* =========================================================
+   Disabled Elements
+   ========================================================= */
+
+button:disabled,
+input:disabled,
+textarea:disabled,
+select:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+/* =========================================================
+   Responsive Typography
+   ========================================================= */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 30px;
+        letter-spacing: -0.5px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    h3 {
+        font-size: 19px;
+    }
+
+    body {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 27px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+}
+
+/* =========================================================
+   Reduced Motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+button { cursor: pointer; }
+body { overflow-x: hidden; }
+table { max-width: 100%; }
+.not-found-page { max-width: 700px; margin: 0 auto; padding: 96px 24px; }
+.not-found-page > p { color: var(--primary); font-weight: 700; }
